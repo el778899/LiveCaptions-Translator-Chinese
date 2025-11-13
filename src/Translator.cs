@@ -168,7 +168,7 @@ namespace LiveCaptionsTranslator
                 // Check LiveCaptions.exe still alive
                 if (Window == null)
                 {
-                    Caption.DisplayTranslatedCaption = "[WARNING] LiveCaptions was unexpectedly closed, restarting...";
+                    Caption.DisplayTranslatedCaption = "[WARNING] LiveCaptions 意外关闭，正在重启...";
                     Window = LiveCaptionsHandler.LaunchLiveCaptions();
                     Caption.DisplayTranslatedCaption = "";
                 }
@@ -203,8 +203,8 @@ namespace LiveCaptionsTranslator
                 if (LogOnlyFlag)
                 {
                     Caption.TranslatedCaption = string.Empty;
-                    Caption.DisplayTranslatedCaption = "[Paused]";
-                    Caption.OverlayTranslatedCaption = "[Paused]";
+                    Caption.DisplayTranslatedCaption = "[暂停]";
+                    Caption.OverlayTranslatedCaption = "[暂停]";
                 }
                 else if (!string.IsNullOrEmpty(RegexPatterns.NoticePrefix().Replace(
                              translatedText, string.Empty).Trim()) &&
@@ -266,8 +266,8 @@ namespace LiveCaptionsTranslator
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[ERROR] Translation Failed: {ex.Message}");
-                return ($"[ERROR] Translation Failed: {ex.Message}", isChoke);
+                Console.WriteLine($"[ERROR] 翻译失败：{ex.Message}");
+                return ($"[ERROR] 翻译失败：{ex.Message}", isChoke);
             }
 
             return (translatedText, isChoke);

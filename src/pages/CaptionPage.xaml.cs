@@ -43,14 +43,14 @@ namespace LiveCaptionsTranslator
                 try
                 {
                     Clipboard.SetText(textBlock.Text);
-                    textBlock.ToolTip = "Copied!";
+                    textBlock.ToolTip = "已复制！";
                 }
                 catch
                 {
-                    textBlock.ToolTip = "Error to Copy";
+                    textBlock.ToolTip = "复制失败";
                 }
                 await Task.Delay(500);
-                textBlock.ToolTip = "Click to Copy";
+                textBlock.ToolTip = "点击复制";
             }
         }
 

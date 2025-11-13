@@ -178,7 +178,7 @@ namespace LiveCaptionsTranslator
             }
             catch (Exception ex)
             {
-                ShowSnackbar("[ERROR] Update Check Failed.", ex.Message, true);
+                ShowSnackbar("[ERROR] 检查更新失败。", ex.Message, true);
                 return;
             }
 
@@ -190,12 +190,12 @@ namespace LiveCaptionsTranslator
             {
                 var dialog = new Wpf.Ui.Controls.MessageBox
                 {
-                    Title = "New Version Available",
-                    Content = $"A new version has been detected: {latestVersion}\n" +
-                              $"Current version: {currentVersion}\n" +
-                              $"Please visit GitHub to download the latest release.",
-                    PrimaryButtonText = "Update",
-                    CloseButtonText = "Ignore this version"
+                    Title = "检测到新版本",
+                    Content = $"发现可用的新版本：{latestVersion}\n" +
+                              $"当前版本：{currentVersion}\n" +
+                              $"请前往 GitHub 下载最新发布。",
+                    PrimaryButtonText = "立即更新",
+                    CloseButtonText = "忽略此版本"
                 };
                 var result = await dialog.ShowDialogAsync();
 
@@ -212,7 +212,7 @@ namespace LiveCaptionsTranslator
                     }
                     catch (Exception ex)
                     {
-                        ShowSnackbar("[ERROR] Open Browser Failed.", ex.Message, true);
+                        ShowSnackbar("[ERROR] 打开浏览器失败。", ex.Message, true);
                     }
                 }
                 else
